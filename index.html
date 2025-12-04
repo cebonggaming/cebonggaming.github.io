@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>MSYTN</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #ffffff;
+      margin: 0;
+      text-align: center;
+    }
+
+    .header {
+      padding: 20px;
+      font-size: 26px;
+      font-weight: bold;
+      color: #1a73e8;
+    }
+
+    .container {
+      margin-top: 80px;
+    }
+
+    input[type="text"] {
+      width: 70%;
+      padding: 15px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 14px 40px;
+      font-size: 18px;
+      background: #4285f4;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #3367d6;
+    }
+
+    .status {
+      margin-top: 25px;
+      font-size: 16px;
+      color: green;
+    }
+
+    .footer {
+      margin-top: 120px;
+      font-size: 14px;
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">MSYTN</div>
+
+  <div class="container">
+    <input type="text" id="urlInput" placeholder="Paste link file / video legal di sini">
+    <br>
+    <button onclick="downloadFile()">DOWNLOAD</button>
+    <div class="status" id="status"></div>
+  </div>
+
+  <div class="footer">
+    © 2025-2030 Downloader Legal • Only for public & personal content MSYTN
+  </div>
+
+  <script>
+    function downloadFile() {
+      const url = document.getElementById("urlInput").value;
+      const status = document.getElementById("status");
+
+      if (url === "") {
+        status.style.color = "red";
+        status.innerHTML = "⚠️ Masukkan link terlebih dahulu!";
+        return;
+      }
+
+      status.style.color = "green";
+      status.innerHTML = "✅ Memproses link...";
+
+      setTimeout(() => {
+        window.open(url, "_blank");
+        status.innerHTML = "✅ Download dibuka di tab baru!";
+      }, 1500);
+    }
+  </script>
+
+</body>
+</html>
